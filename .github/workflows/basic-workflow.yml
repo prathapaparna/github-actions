@@ -4,10 +4,10 @@ on: workflow_dispatch
 jobs:
   basic-job:
     runs-on: ubuntu-latest
-      steps:
-        - name: print hello
-          run: echo "hello world"
-        - name: print good bye
-          run: |
-               echo "good bye"
-               echo "see you soon"
+    steps:
+      - name: print hello
+        run: echo "hello world"
+      - name: print good bye
+        run: |
+             echo "good bye"
+             echo "see you soon"
