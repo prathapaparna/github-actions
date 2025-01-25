@@ -14,7 +14,7 @@ in github-actions we have 3 building blocks
 
    <img width="600" alt="{95B1009B-5256-4B8C-A9AA-07999C9167FC}" src="https://github.com/user-attachments/assets/d998810a-a62f-4b3f-8920-1cc41288824d" />
 ### multi job pipeline
-**NOte:** if we add multiple jobs we should give checkout code in every job previous job data is not applied to next job
+**NOte:** if we add multiple jobs we should give checkout code in every job previous job data is not applied to next job runner also we have to mention
 ```
 name: build Workflow
 on: push
