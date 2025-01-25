@@ -13,4 +13,28 @@ in github-actions we have 3 building blocks
    
 
    <img width="600" alt="{95B1009B-5256-4B8C-A9AA-07999C9167FC}" src="https://github.com/user-attachments/assets/d998810a-a62f-4b3f-8920-1cc41288824d" />
-   
+### multi job pipeline
+**NOte:** if we add multiple jobs we should give checkout code in every job previous job data is not applied to next job
+```
+name: build Workflow
+on: push
+
+jobs:
+  maven-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: list of files
+        run: ls
+  docker-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          file: ./Dockerfile # even tried with just "Dockerfile" without double quotation
+          tags: myimage:latest
+  ```
+            
