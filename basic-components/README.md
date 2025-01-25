@@ -37,4 +37,28 @@ jobs:
           file: ./Dockerfile # even tried with just "Dockerfile" without double quotation
           tags: myimage:latest
   ```
-            
+### parallel and sequential builds
+**note:** use **needs** key word, here docker-job depends on maven-job
+```
+name: build Workflow
+on: push
+
+jobs:
+  maven-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: list of files
+        run: ls
+  docker-job:
+    runs-on: ubuntu-latest
+    needs:   maven-job
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          file: ./Dockerfile # even tried with just "Dockerfile" without double quotation
+          tags: myimage:latest
+  ```
