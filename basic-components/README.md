@@ -62,3 +62,12 @@ jobs:
           file: ./Dockerfile # even tried with just "Dockerfile" without double quotation
           tags: myimage:latest
   ```
+## summery
+
+In this section, you learned about the core components that make up GitHub Actions. It all starts with Workflows, which are attached to GitHub repositories and define which Jobs should be executed based on specific events or triggers. A Workflow can have one or more Jobs, and each Job specifies the environment in which tasks will run, including the server and the sequence of Steps to execute. These Steps perform the actual work, which can involve running command-line commands or using predefined Actions. Jobs can run in parallel by default or sequentially if configured.
+
+Events and triggers play a crucial role in Workflows. GitHub provides a wide variety of events, such as repository-related actions like pushing or committing changes, as well as manually starting a Workflow. A Workflow must be associated with at least one event but can support multiple events. You define Workflows in YAML files located in the .github/workflows/ directory. These files can be created directly on GitHub or locally, though they must follow the GitHub Actions syntax, utilizing specific keywords and Actions.
+
+Jobs and their Steps execute on "runners," which are servers that handle the Jobs. GitHub provides predefined runners hosted in their data centers, supporting Linux, Windows, and macOS, with various hardware profiles based on the operating system. If the predefined runners do not meet your needs, you can bring your own runners, though that wasn't covered in this section.
+
+Workflows execute whenever their associated event is triggered, and you can monitor their execution and logs directly on GitHub. For Steps in your Jobs, you can use the run key to execute custom shell commands, as demonstrated throughout this section. For more advanced or repetitive tasks, you can use predefined Actions, either from GitHub, the community, or your custom-built Actions. While this section covered the basics, you'll explore building custom Actions later in the course. With these fundamentals, you're ready to dive deeper into GitHub Actions.
