@@ -105,9 +105,14 @@ jobs:
 
 - Set Job Output in docker-job
 
-- The step check_status checks if the container is running.It assigns "running" or "failed" to the status variable.This is passed as an output in outputs.container_status.Use Job Output in verify-container
+- The step **check_status** checks if the container is running.It assigns "running" or "failed" to the status variable.This is passed as an output in **outputs.container_status**.Use Job Output in verify-container
 
-- needs: docker-job makes sure it runs only after docker-job.It prints the container status from ${{ needs.docker-job.outputs.container_status }}.
+- needs: docker-job makes sure it runs only after docker-job.It prints the container status from **${{ needs.docker-job.outputs.container_status }}**.
+- 
+- Using **$GITHUB_OUTPUT** instead of **$GITHUB_ENV**
+
+**$GITHUB_OUTPUT** ensures the value is stored as a job output.
+**$GITHUB_ENV** is used for setting environment variables, not job outputs.
 
 # cache dependencies
 
