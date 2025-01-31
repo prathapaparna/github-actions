@@ -136,10 +136,16 @@ jobs:
 - If cache is available, it restores dependencies automatically.
 
 **first-run**
+
  <img width="577" alt="{9EE74D20-AA56-4249-9925-048690CAE9C5}" src="https://github.com/user-attachments/assets/c4e7786d-c148-410b-96f9-983530e766a9" />
+ <img width="187" alt="{3952A5C3-C06C-4BE2-8E7F-585A05D82039}" src="https://github.com/user-attachments/assets/21e2880e-5ab5-4fa8-ade1-33b11389bb9a" />
+ - during first run maven job taking 2m
+
   
 **re-run**
   <img width="700" alt="{E41F05D6-E4FB-4E7C-A1F4-F702841FCD94}" src="https://github.com/user-attachments/assets/148c2b12-254f-4b72-a39c-4143571bb2ab" />
+  <img width="188" alt="{7AA01C20-505A-47A6-9AA8-02C2E8B32D52}" src="https://github.com/user-attachments/assets/3f5852a3-28d9-4c87-8812-64d7f32fa743" />
+  - during rerun maven job taking 13s
 
 
 
