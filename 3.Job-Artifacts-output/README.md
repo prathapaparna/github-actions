@@ -115,6 +115,20 @@ jobs:
 **$GITHUB_ENV** is used for setting environment variables, not job outputs.
 
 # cache dependencies
+- Caching dependencies helps reduce build times by storing and **reusing previously downloaded dependencies**. Since your workflow involves build and test, we can cache dependencies for both.
+- 🔹 Benefits of Caching
+🚀 Reduces build times (especially for Maven & Docker builds).
+✅ Avoids redundant downloads of dependencies.
+🔥 Improves CI/CD performance in GitHub Actions.
+```
+- name: Cache Maven Dependencies
+  uses: actions/cache@v3
+  with:
+    path: ~/.m2/repository
+    key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+    restore-keys: |
+      maven-${{ runner.os }}-
+```
 
 
   
