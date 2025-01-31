@@ -135,6 +135,14 @@ jobs:
 - If pom.xml changes, dependencies will not be redownloaded.
 - If cache is available, it restores dependencies automatically.
 
+**first-run**
+ <img width="577" alt="{9EE74D20-AA56-4249-9925-048690CAE9C5}" src="https://github.com/user-attachments/assets/c4e7786d-c148-410b-96f9-983530e766a9" />
+  
+**re-run**
+  <img width="700" alt="{E41F05D6-E4FB-4E7C-A1F4-F702841FCD94}" src="https://github.com/user-attachments/assets/148c2b12-254f-4b72-a39c-4143571bb2ab" />
+
+
+
 
 
   
