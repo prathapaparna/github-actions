@@ -117,9 +117,9 @@ jobs:
 # cache dependencies
 - Caching dependencies helps reduce build times by storing and **reusing previously downloaded dependencies**. Since your workflow involves build and test, we can cache dependencies for both.
 - 🔹 Benefits of Caching
-🚀 Reduces build times (especially for Maven & Docker builds).
-✅ Avoids redundant downloads of dependencies.
-🔥 Improves CI/CD performance in GitHub Actions.
+- 🚀 Reduces build times (especially for Maven & Docker builds).
+- ✅ Avoids redundant downloads of dependencies.
+- 🔥 Improves CI/CD performance in GitHub Actions.
 ```
 - name: Cache Maven Dependencies
   uses: actions/cache@v3
@@ -129,6 +129,12 @@ jobs:
     restore-keys: |
       maven-${{ runner.os }}-
 ```
+✅ How It Works?
+
+- Caches .m2/repository (Maven dependencies directory).
+- If pom.xml changes, dependencies will not be redownloaded.
+- If cache is available, it restores dependencies automatically.
+
 
 
   
