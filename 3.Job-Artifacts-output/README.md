@@ -41,6 +41,11 @@ jobs:
 -  maven job uploading artifacts into target folder and(we can manually download and also used in another job)
 -  docker job downloading automatically those artifacts
 
+-  🔹 Key Points:
+
+-**upload-artifact** → Saves files after a job finishes.
+-**download-artifact**→ Fetches those files in another job.
+
 # Job Output
 - if you want to pass one job output(it can be a value, status, anything) to another job then we can use job outputs
 - **ex:** we might want to pass the container's status or URL from one job to another. You can achieve this using job outputs.
@@ -116,6 +121,7 @@ jobs:
 
 # cache dependencies
 - Caching dependencies helps reduce build times by storing and **reusing previously downloaded dependencies**. Since your workflow involves build and test, we can cache dependencies for both.
+- Stores dependencies (like Maven **.m2** or **npm node_modules**) to avoid re-downloading.
 - 🔹 Benefits of Caching
 - 🚀 Reduces build times (especially for Maven & Docker builds).
 - ✅ Avoids redundant downloads of dependencies.
